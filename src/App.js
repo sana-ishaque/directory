@@ -3,13 +3,18 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Button from 'react-bootstrap/Button';
 import Persons from './components/Persons/Persons';
+import BckdImage from './assets/team-2.gif'
 
 
 function App() {
   return (
     <div className="App">
-      <h1>Person List</h1>
-      <Persons />
+      <div>
+        <img src={BckdImage} />
+      </div>
+      <div>
+        <Persons />
+      </div>
     </div>
   );
 }

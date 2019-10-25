@@ -3,19 +3,13 @@ import PersonInfo from './PersonInfo/PersonInfo'
 // import Persons from '../Persons'
 import PropTypes from 'prop-types';
 import PersonEdit from './PersonEdit/PersonEdit';
-// import { Card, Button, ButtonGroup } from 'react-bootstrap'
-
-
-
-
+import { Card } from 'react-bootstrap'
 
 export default function Person(props) {
     return (
-        <div className="Person">
-            <PersonInfo person={props.person} />
-            <PersonEdit  person={props.person}/>
-
-        </div>
+        <Card style={{ width: '25rem' }}>
+            {props.person.isEdit ? <PersonEdit person={props.person} /> : <PersonInfo person={props.person} />}
+        </Card>
     )
 }
 

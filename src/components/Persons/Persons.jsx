@@ -8,17 +8,20 @@ export default function Persons() {
         {
             "name": "Rizwan Noor",
             "age": 35,
-            "description": "Fitness Instructor at Gravity"
+            "description": "Fitness Instructor at Gravity",
+            isEdit: false
         },
         {
             "name": "Gemma Stafford",
             "age": 31,
-            "description": "Chef & Baking Expert"
+            "description": "Chef & Baking Expert",
+            isEdit: true
         },
         {
             "name": "Tati Westbrook",
             "age": 37,
-            "description": "Make-Up Artist"
+            "description": "Make-Up Artist",
+            isEdit: false
         }
     ]
     return (

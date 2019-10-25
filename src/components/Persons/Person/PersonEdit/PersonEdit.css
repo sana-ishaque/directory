@@ -1,4 +1,11 @@
 .PersonEdit{
     text-align: center;
+}
 
+.EditInput{
+    display: flex;
+    flex-direction: column;
+    max-width: 190px;
+    text-align: center;
+    margin: auto;
 }
