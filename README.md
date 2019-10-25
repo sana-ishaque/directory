@@ -1,6 +1,6 @@
 deplyed at : https://directory-11fba.firebaseapp.com/
 
-![](directory/src/assets/screencapture-directory.png)
+![](src/assets/screencapture-directory.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
