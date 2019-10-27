@@ -15,10 +15,9 @@ export default function PersonInfo(props) {
                     {props.person.description}
                 </Card.Text>
                 <ButtonGroup aria-label="Basic example">
-                    <Button variant="light"> <FontAwesomeIcon className="text-info" icon={faCheck} /></Button>
+                    <Button variant="light" onClick={enableEdit}> <FontAwesomeIcon className="text-info" icon={faCheck} /></Button>
                     <Button variant="light"><FontAwesomeIcon className="text-danger" icon={faTrashAlt} /></Button>
                 </ButtonGroup>
-
             </Card.Body>
         </div>
     )

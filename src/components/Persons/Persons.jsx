@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 
 
 export default function Persons() {
-    const personsData = [
+    let personsData = [
         {
             "name": "Rizwan Noor",
             "age": 35,
@@ -15,7 +15,7 @@ export default function Persons() {
             "name": "Gemma Stafford",
             "age": 31,
             "description": "Chef & Baking Expert",
-            isEdit: true
+            isEdit: false
         },
         {
             "name": "Tati Westbrook",
@@ -24,10 +24,17 @@ export default function Persons() {
             isEdit: false
         }
     ]
+
+    let enableEdit = () =>{alert('Hi i am your grandParent')};
+
     return (
         <div className="Persons">
             <Card style={{ width: '18rem' }}>
-                {personsData.map(person => <Person person={person} key={Date.now} />)}
+                {personsData.map(person => <Person 
+                    person={person} 
+                    key={Date.now}
+                    enableEdit=
+                    />)}
             </Card>
         </div>
 
