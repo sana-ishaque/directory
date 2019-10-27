@@ -25,16 +25,16 @@ export default function Persons() {
         }
     ]
 
-    let enableEdit = () =>{alert('Hi i am your grandParent')};
+    let enableEdit = () => { alert('Hi i am your grandParent') };
 
     return (
         <div className="Persons">
             <Card style={{ width: '18rem' }}>
-                {personsData.map(person => <Person 
-                    person={person} 
+                {personsData.map(person => <Person
+                    person={person}
                     key={Date.now}
-                    enableEdit=
-                    />)}
+                    click={enableEdit}
+                />)}
             </Card>
         </div>
 

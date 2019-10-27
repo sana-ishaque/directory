@@ -9,13 +9,15 @@ import './Person.css'
 export default function Person(props) {
     return (
         <Card className="Person">
-            {props.person.isEdit ? <PersonEdit person={props.person} /> : <PersonInfo person={props.person} />}
+            {props.person.isEdit ? <PersonEdit person={props.person} /> : <PersonInfo 
+            person={props.person}
+            click={props.click} />}
         </Card>
     )
 }
 
 Person.prototypes = {
     person: PropTypes.object,
-    enableEdit: PropTypes.func
+    // enableEdit: PropTypes.func
 }
 
