@@ -1,43 +1,52 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Person from './Person/Person'
 import Card from 'react-bootstrap/Card'
+// import { stat } from 'fs';
 
 
-export default function Persons() {
-    let personsData = [
-        {
-            "name": "Rizwan Noor",
-            "age": 35,
-            "description": "Fitness Instructor at Gravity",
-            isEdit: false
-        },
-        {
-            "name": "Gemma Stafford",
-            "age": 31,
-            "description": "Chef & Baking Expert",
-            isEdit: false
-        },
-        {
-            "name": "Tati Westbrook",
-            "age": 37,
-            "description": "Make-Up Artist",
-            isEdit: false
+export default class Persons extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            personsData: [
+                {
+                    "name": "Rizwan Noor",
+                    "age": 35,
+                    "description": "Fitness Instructor at Gravity",
+                    "isEdit": false
+                },
+                {
+                    "name": "Gemma Stafford",
+                    "age": 31,
+                    "description": "Chef & Baking Expert",
+                    "isEdit": false
+                },
+                {
+                    "name": "Tati Westbrook",
+                    "age": 37,
+                    "description": "Make-Up Artist",
+                    "isEdit": false
+                }
+            ]
         }
-    ]
+    }
+    enableEditHandler = () => {
+        // const persons = [...this.state.personsData];
+        // this.setState({ persons.isEdit : true})
+        this.setState({ isEdit: true })
+    };
 
-    let enableEdit = () => { alert('Hi i am your grandParent') };
-
-    return (
-        <div className="Persons">
-            <Card style={{ width: '18rem' }}>
-                {personsData.map(person => <Person
-                    person={person}
-                    key={Date.now}
-                    click={enableEdit}
-                />)}
-            </Card>
-        </div>
-
-
-    )
+    render() {
+        return (
+            <div className="Persons">
+                <Card >
+                    {this.state.personsData.map(person => <Person
+                        person={person}
+                        key={Date.now()}
+                        click={this.enableEditHandler}
+                    />)}
+                </Card>
+            </div>
+        )
+    }
 }

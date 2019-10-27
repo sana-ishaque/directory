@@ -9,12 +9,8 @@ import BckdImage from './assets/team-2.gif'
 function App() {
   return (
     <div className="App">
-      <div>
-        <img src={BckdImage} />
-      </div>
-      <div>
-        <Persons />
-      </div>
+      <img src={BckdImage} />
+      <Persons />
     </div>
   );
 }
