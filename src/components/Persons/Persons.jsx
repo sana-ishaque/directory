@@ -46,7 +46,6 @@ export default class Persons extends Component {
     };
 
     deletePerson = (index) => {
-        alert('Heyy delete me');
         const persons = [...this.state.personsData];
         persons.splice(index, 1);
         this.setState({personsData: persons})
