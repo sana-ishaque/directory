@@ -11,7 +11,7 @@ export default function PersonEdit(props) {
         <div className="PersonEdit">
             <Card.Body  >
                 <div className='EditInput'>
-                <input value={props.person.name} />
+                <input onChange={props.changed} defaultValue={props.person.name} />
                 <input value={props.person.age} />
                 <textarea>{props.person.description}</textarea>
                 </div>

@@ -10,18 +10,21 @@ export default class Persons extends Component {
         this.state = {
             personsData: [
                 {
+                    "id": 1,
                     "name": "Rizwan Noor",
                     "age": 35,
                     "description": "Fitness Instructor at Gravity",
                     "isEdit": false
                 },
                 {
+                    "id": 2,
                     "name": "Gemma Stafford",
                     "age": 31,
                     "description": "Chef & Baking Expert",
                     "isEdit": false
                 },
                 {
+                    "id": 3,
                     "name": "Tati Westbrook",
                     "age": 37,
                     "description": "Make-Up Artist",
@@ -30,21 +33,24 @@ export default class Persons extends Component {
             ]
         }
     }
-    enableEditHandler = () => {
-        // const persons = [...this.state.personsData];
-        // this.setState({ persons.isEdit : true})
-        this.setState({ isEdit: true })
+
+    enableEdit = (person) => {
+        this.setState({
+            personsData: this.state.personsData.map(mappedPerson=>{
+                if(mappedPerson.name ===person.name ){
+                    mappedPerson.isEdit = true;
+                }
+                return mappedPerson;
+            })
+        })
     };
+
 
     render() {
         return (
             <div className="Persons">
                 <Card >
-                    {this.state.personsData.map(person => <Person
-                        person={person}
-                        key={Date.now()}
-                        click={this.enableEditHandler}
-                    />)}
+                    {this.state.personsData.map(person => <Person person={person} key={person.id} anotherProp={() => this.enableEdit(person)} />)}
                 </Card>
             </div>
         )

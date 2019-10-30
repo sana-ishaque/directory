@@ -7,19 +7,29 @@ import { Card } from 'react-bootstrap'
 import './Person.css'
 
 export default function Person(props) {
-    console.log(props);
+
+
 
     return (
         <Card className="Person">
-            {props.person.isEdit ? <PersonEdit person={props.person} /> : <PersonInfo
-                person={props.person}
-                click={props.click} />}
+            {
+                props.person.isEdit ? <PersonEdit person={props.person} /> : <PersonInfo
+                    person={props.person}
+                    anotherProp={props.anotherProp} />
+            }
+
+
         </Card>
     )
 }
 
 Person.prototypes = {
     person: PropTypes.object,
-    click: PropTypes.func
+    click: PropTypes.func,
+    anotherProp: PropTypes.func
 }
+// <PersonInfo
+// person={props.person}
+// click={props.click} />
+// <PersonEdit person={props.person} />
 
