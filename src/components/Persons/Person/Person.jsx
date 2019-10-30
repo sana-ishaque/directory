@@ -15,7 +15,9 @@ export default function Person(props) {
             {
                 props.person.isEdit ? <PersonEdit person={props.person} /> : <PersonInfo
                     person={props.person}
-                    anotherProp={props.anotherProp} />
+                    anotherProp={props.anotherProp}
+                    delete={props.delete}
+                    />
             }
 
 
@@ -26,7 +28,9 @@ export default function Person(props) {
 Person.prototypes = {
     person: PropTypes.object,
     click: PropTypes.func,
-    anotherProp: PropTypes.func
+    anotherProp: PropTypes.func,
+    delete: PropTypes.func
+
 }
 // <PersonInfo
 // person={props.person}

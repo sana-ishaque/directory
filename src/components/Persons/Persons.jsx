@@ -36,8 +36,8 @@ export default class Persons extends Component {
 
     enableEdit = (person) => {
         this.setState({
-            personsData: this.state.personsData.map(mappedPerson=>{
-                if(mappedPerson.name ===person.name ){
+            personsData: this.state.personsData.map(mappedPerson => {
+                if (mappedPerson.name === person.name) {
                     mappedPerson.isEdit = true;
                 }
                 return mappedPerson;
@@ -45,12 +45,24 @@ export default class Persons extends Component {
         })
     };
 
+    deletePerson = (index) => {
+        alert('Heyy delete me');
+        const persons = [...this.state.personsData];
+        persons.splice(index, 1);
+        this.setState({personsData: persons})
+
+    }
 
     render() {
         return (
             <div className="Persons">
                 <Card >
-                    {this.state.personsData.map(person => <Person person={person} key={person.id} anotherProp={() => this.enableEdit(person)} />)}
+                    {this.state.personsData.map((person, index) => <Person
+                        person={person}
+                        key={person.id}
+                        anotherProp={() => this.enableEdit(person)}
+                        delete={() => this.deletePerson(index)}
+                    />)}
                 </Card>
             </div>
         )

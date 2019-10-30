@@ -16,7 +16,7 @@ export default function PersonInfo(props) {
                 </Card.Text>
                 <ButtonGroup aria-label="Basic example">
                     <Button variant="light" onClick={props.anotherProp} > <FontAwesomeIcon className="text-info" icon={faCheck} /></Button>
-                    <Button variant="light"><FontAwesomeIcon className="text-danger" icon={faTrashAlt} /></Button>
+                    <Button variant="light" onClick={props.delete} ><FontAwesomeIcon className="text-danger" icon={faTrashAlt} /></Button>
                 </ButtonGroup>
             </Card.Body>
         </div>
@@ -26,6 +26,8 @@ PersonInfo.prototypes = {
     name: PropTypes.string,
     age: PropTypes.number,
     description: PropTypes.string,
-    anotherProp: PropTypes.func
+    anotherProp: PropTypes.func,
+    delete: PropTypes.func
+
 }
 
